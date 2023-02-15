@@ -3,6 +3,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         task1();
+        extraTask5();
+        extraTask6();
+        extraTask7();
     }
 
     public static void task1() {
@@ -61,5 +64,47 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(first));
+    }
+
+    public static void extraTask5() {
+        System.out.println("Extra task 5");
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if ((i + j) % 2 == 0) {
+                    matrix[i][j] = 1;
+                } else {
+                    matrix[i][j] = 0;
+                }
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void extraTask6() {
+        System.out.println("Extra task 6");
+        int[] arr = {5, 4, 3, 2, 1};
+        int[] arrNew = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            arrNew[i] = arr[arr.length - i - 1];
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arrNew));
+    }
+
+    public static void extraTask7() {
+        System.out.println("Extra task 7");
+        int[] arr = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(arr));
+        int a, b; //временные переменные
+        int n = (int) Math.round(arr.length / 2.0);  // середина массива
+        for (int i = 0; i < n; i++) {
+            a = arr[i];
+            b = arr[arr.length - 1 - i];
+            arr[i] = b;
+            arr[arr.length - 1 - i] = a;
+        }
+        System.out.println(Arrays.toString(arr));
     }
 }
